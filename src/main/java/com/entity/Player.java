@@ -16,7 +16,7 @@ public class Player extends Entity {
 
 		this.gamePanel = gamePanel;
 		this.keyListen = keyListen;
-
+		
 		setDefaultValues();
 	}
 
@@ -37,12 +37,15 @@ public class Player extends Entity {
 
 		}
 
-		else if (keyListen.rightPressed == true) {
+		if (keyListen.rightPressed == true) {
 			x += velocity;
 			if (x > gamePanel.screenWidth - gamePanel.tileSize) {
 				x = gamePanel.screenWidth - gamePanel.tileSize;
 			}
 		}
+		
+		gamePanel.enemy.intersect = false;
+		gamePanel.collisionDetection.checkTile(this);
 	}
 
 	public void draw(Graphics2D g2D) {
