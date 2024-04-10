@@ -14,26 +14,30 @@ public class GamePanel extends JPanel implements Runnable {
 	private static final long serialVersionUID = -7037762034212883804L;
 
 	// Screen Settings
-	final int originalTileSize = 16; // 16x16 tile
-	final int scale = 3;
-	public final int tileSize = originalTileSize * scale; // 48x48 tile
+	final int originalTileSize = 16;
+	final int upScale = 3;
+	public final int tileSize = originalTileSize * upScale;
 	
 	final int maxScreenCol = 16;
 	final int maxScreenRow = 12;
-	public final int screenWidth = tileSize * maxScreenCol; // 768 pixels
-	final int screenHeight = tileSize * maxScreenRow; // 576 pixels
+	public final int screenWidth = tileSize * maxScreenCol; // REMIND: Constant -> lower speed the higher screen width
+	public final int screenHeight = tileSize * maxScreenRow; // REMIND: Constant -> higher speed the higher screen height
 
 	int fps = 60; // FPS (Frames per second)
 
 	Thread gameThread;
 	KeyListen keyHandler = new KeyListen(this);
-	Player player = new Player(this, keyHandler);
-	Enemy enemy = new Enemy(this);
+	public Player player = new Player(this, keyHandler);
+	public Enemy enemy = new Enemy(this);
+	public CollisionDetection collisionDetection = new CollisionDetection(this);
 
 	// Game State
 	public int gameState;
 	public final int playState = 1;
 	public final int pauseState = 0;
+	
+	// Health
+	public int health = 5;
 
 	public GamePanel() {
 

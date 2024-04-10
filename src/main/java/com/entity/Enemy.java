@@ -14,6 +14,7 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 	public Enemy(GamePanel gamePanel) {
 
 		this.gamePanel = gamePanel;
+
 		setDefaultValues();
 	}
 
@@ -26,13 +27,28 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 
 	public void update() {
 		y += velocity;
-		// REMIND: Check for y = 0 -> playerLives - 1
-		// if (playerLives == 0) -> Display GameOver UI and deploy pauseState
+
+		if (intersect) { // Intersected with player
+			this.resetPosition();
+		}
+
+		if (y > gamePanel.screenHeight) { // Outside screen -> Lose health
+			gamePanel.health -= 1;
+			if (gamePanel.health <= 0) {
+				// REMIND: Display GameOver UI and deploy pauseState
+			}
+			this.resetPosition();
+		}
 	}
 
 	public void draw(Graphics2D g2D) {
 
 		g2D.setColor(Color.red);
 		g2D.fillRect(x, y, gamePanel.tileSize, gamePanel.tileSize);
+	}
+
+	public void resetPosition() {
+		y = 0 - gamePanel.tileSize;
+		x = random.nextInt(gamePanel.screenWidth);
 	}
 }
