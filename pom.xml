@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.liam</groupId>
-	<artifactId>spelcatch</artifactId>
+	<artifactId>catchGame</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpelCatch</name>
+	<name>CatchGame</name>
 	<description>Catch eggs into a basket project.</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
