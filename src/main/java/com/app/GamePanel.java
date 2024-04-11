@@ -1,11 +1,6 @@
 package com.app;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-
-import javax.swing.JPanel;
+// FIXME: Add logger to save errors to file
 
 import com.entity.Enemy;
 import com.entity.Player;
