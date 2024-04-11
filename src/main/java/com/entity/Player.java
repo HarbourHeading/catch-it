@@ -1,10 +1,10 @@
 package com.entity;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-
 import com.app.GamePanel;
 import com.app.KeyListen;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
 
 public class Player extends Entity {
 
@@ -22,22 +22,21 @@ public class Player extends Entity {
 
 	public void setDefaultValues() {
 
-		x = 100;
-		y = 500;
+		x = gamePanel.screenWidth / 2 - gamePanel.tileSize / 2; // Center screen
+		y = (int) (gamePanel.screenHeight * 0.8);
 		velocity = 4;
 	}
 
 	public void update() {
 
-		if (keyListen.leftPressed == true) {
+		if (keyListen.leftPressed) {
 			x -= velocity;
 			if (x < leftBorder) {
 				x = leftBorder;
 			}
-
 		}
 
-		if (keyListen.rightPressed == true) {
+		if (keyListen.rightPressed) {
 			x += velocity;
 			if (x > gamePanel.screenWidth - gamePanel.tileSize) {
 				x = gamePanel.screenWidth - gamePanel.tileSize;
@@ -45,7 +44,7 @@ public class Player extends Entity {
 		}
 		
 		gamePanel.enemy.intersect = false;
-		gamePanel.collisionDetection.checkTile(this);
+		gamePanel.collisionDetection.checkTile();
 	}
 
 	public void draw(Graphics2D g2D) {

@@ -1,15 +1,14 @@
 package com.entity;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.util.Random;
-
 import com.app.GamePanel;
+
+import java.awt.*;
+import java.util.Random;
 
 public class Enemy extends Entity { // REMIND: Create more Enemy instances/threads
 
 	GamePanel gamePanel;
-	private Random random = new Random();
+	private final Random random = new Random();
 
 	public Enemy(GamePanel gamePanel) {
 
@@ -21,21 +20,21 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 	public void setDefaultValues() {
 
 		x = random.nextInt(gamePanel.screenWidth);
-		y = 0 - gamePanel.tileSize;
+		y = -gamePanel.tileSize;
 		velocity = 4;
 	}
 
 	public void update() {
 		y += velocity;
 
-		if (intersect) { // Intersected with player
+		if (intersect) {
 			this.resetPosition();
 		}
 
 		if (y > gamePanel.screenHeight) { // Outside screen -> Lose health
 			gamePanel.health -= 1;
 			if (gamePanel.health <= 0) {
-				// REMIND: Display GameOver UI and deploy pauseState
+				gamePanel.gameState = gamePanel.finishState;
 			}
 			this.resetPosition();
 		}
@@ -48,7 +47,8 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 	}
 
 	public void resetPosition() {
-		y = 0 - gamePanel.tileSize;
+
+		y = -gamePanel.tileSize;
 		x = random.nextInt(gamePanel.screenWidth);
 	}
 }
