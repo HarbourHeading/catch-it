@@ -1,8 +1,31 @@
-# CatchGame
-## Summary
-The program runs a game of "Catch", where you collect eggs into a basket
-to get scores. Not catching an egg will make you lose a life, which you only
-have 5 of. Losing all 5 lives gives a game over screen where the top scores
-will be displayed and added to if you got more points than one of the top 3
-scores. A retry button is present in the game over screen. Controls are
-A/Left_arrow (Left) or D/Right_Arrow (Right).
+# Catch Game
+
+Catch is a game where you catch falling objects. Each caught object gives the player a point
+and each missed object makes the player lose health. The game is written in java and
+built with maven.
+
+## Play
+
+The game starts in a paused state. Press the ESC key to unpause. Use A or left arrow to move left,
+and D or right arrow to move right. Upon losing all 5 lives, you are greeted with a game over screen.
+The game over screen displays the top 3 scores. If your score beats one of them, it replaces the lower score
+permanently.
+
+## Setup
+
+<!-- start:code block -->
+
+Clone this repository
+
+git clone https://github.com/HarbourHeading/CatchGame.git
+
+cd CatchGame
+
+run com.app.Main.java
+
+<!-- end:code block -->
+
+## Contributing
+
+The project is open-source and any and all contributions are welcome.<br>
+All feedback in respect to the project is just as appreciated!
