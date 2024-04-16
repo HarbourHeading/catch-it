@@ -3,14 +3,14 @@ package com.entity;
 import com.app.GamePanel;
 import com.app.KeyListen;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Color;
 
 public class Player extends Entity {
 
-	GamePanel gamePanel;
-	KeyListen keyListen;
-	int leftBorder = 0;
+	final GamePanel gamePanel;
+	final KeyListen keyListen;
+	final int leftBorder = 0;
 
 	public Player(GamePanel gamePanel, KeyListen keyListen) {
 

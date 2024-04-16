@@ -2,12 +2,13 @@ package com.entity;
 
 import com.app.GamePanel;
 
-import java.awt.*;
+import java.awt.Graphics2D;
+import java.awt.Color;
 import java.util.Random;
 
 public class Enemy extends Entity { // REMIND: Create more Enemy instances/threads
 
-	GamePanel gamePanel;
+	final GamePanel gamePanel;
 	private final Random random = new Random();
 
 	public Enemy(GamePanel gamePanel) {
