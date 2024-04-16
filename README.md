@@ -8,23 +8,28 @@ built with maven.
 
 The game starts in a paused state. Press the ESC key to unpause. Use A or left arrow to move left,
 and D or right arrow to move right. Upon losing all 5 lives, you are greeted with a game over screen.
-The game over screen displays the top 3 scores. If your score beats one of them, it replaces the lower score
-permanently.
+The game over screen displays the top 3 scores. If your score beats one of them, it replaces the lower score.
+Press F to restart.
 
 ## Setup
 
-<!-- start:code block -->
+Skip to the last step if you downloaded the jar file directly.
 
-Clone this repository
+```
+1. git clone https://github.com/HarbourHeading/CatchGame.git
+2. cd CatchGame
+3. mvn install
+4. cd target
+5. java -jar catchGame-0.0.1-SNAPSHOT.jar
+```
 
-git clone https://github.com/HarbourHeading/CatchGame.git
+## To do
 
-cd CatchGame
-
-run com.app.Main.java
-
-<!-- end:code block -->
-
+- Create database for storing top scores.
+- Add logger, stderr piped to file.
+- Change game speed based on screen size.
+- Implement sorting algorithm for score file.
+- Fix player position not resetting on restart.
 ## Contributing
 
 The project is open-source and any and all contributions are welcome.<br>
