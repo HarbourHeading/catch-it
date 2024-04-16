@@ -27,4 +27,10 @@ replay_pid*
 .settings/
 
 # Target
-/target/
+target/
+
+# Intellij IDE files
+.idea/
+
+# Score file
+topScores.txt
