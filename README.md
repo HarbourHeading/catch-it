@@ -11,6 +11,8 @@ and D or right arrow to move right. Upon losing all 5 lives, you are greeted wit
 The game over screen displays the top 3 scores. If your score beats one of them, it replaces the lower score.
 Press F to restart.
 
+![game](https://github.com/HarbourHeading/CatchGame/assets/69332989/3f50022d-11c5-4898-8cd2-0c74659820f8)
+
 ## Setup
 
 Skip to the last step if you downloaded the jar file directly.
