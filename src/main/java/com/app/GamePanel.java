@@ -1,17 +1,15 @@
 package com.app;
 
-// FIXME: Add logger to save errors to file
-
 import com.entity.Enemy;
 import com.entity.Player;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
+
+import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 
 public class GamePanel extends JPanel implements Runnable {
@@ -24,23 +22,23 @@ public class GamePanel extends JPanel implements Runnable {
 
 	final int maxScreenCol = 16;
 	final int maxScreenRow = 12;
-	public final int screenWidth = tileSize * maxScreenCol; // FIXME: Constant -> lower speed the higher screen width
-	public final int screenHeight = tileSize * maxScreenRow; // FIXME: Constant -> higher speed the higher screen height
-
-	int fps = 60; // FPS (Frames per second)
+	public final int screenWidth = tileSize * maxScreenCol;
+	public final int screenHeight = tileSize * maxScreenRow;
+	public final Enemy enemy = new Enemy(this);
 
 	Thread gameThread;
-	KeyListen keyHandler = new KeyListen(this);
-	public Player player = new Player(this, keyHandler);
-	public Enemy enemy = new Enemy(this);
-	public CollisionDetection collisionDetection = new CollisionDetection(this);
-	Ui ui = new Ui(this);
+	public final CollisionDetection collisionDetection = new CollisionDetection(this);
+	final int fps = 60; // FPS (Frames per second)
+	final KeyListen keyHandler = new KeyListen(this);
+	public final Player player = new Player(this, keyHandler);
+	final Ui ui = new Ui(this);
 
 	// Game States
 	public int gameState;
 	public final int pauseState = 0;
 	public final int playState = 1;
 	public final int finishState = 2;
+	public boolean leaderboardCalculated = false;
 
 	// In-game values
 	public int health = 5;
@@ -55,9 +53,7 @@ public class GamePanel extends JPanel implements Runnable {
 		this.setFocusable(true);
 	}
 
-	public void setupGame() {
-		gameState = pauseState;
-	}
+	public void setupGame() { gameState = pauseState; }
 
 	public void startGameThread() {
 
