@@ -2,7 +2,7 @@ package com.app;
 
 public class CollisionDetection {
 
-	GamePanel gamePanel;
+	final GamePanel gamePanel;
 
 	public CollisionDetection(GamePanel gamePanel) {
 		this.gamePanel = gamePanel;
