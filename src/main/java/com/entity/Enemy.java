@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import java.util.Random;
 
-public class Enemy extends Entity { // REMIND: Create more Enemy instances/threads
+public class Enemy extends Entity {
 
 	final GamePanel gamePanel;
 	private final Random random = new Random();
@@ -15,7 +15,7 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 
 		this.gamePanel = gamePanel;
 
-		setDefaultValues();
+		this.setDefaultValues();
 	}
 
 	public void setDefaultValues() {
@@ -32,7 +32,7 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 			this.resetPosition();
 		}
 
-		if (y > gamePanel.screenHeight) { // Outside screen -> Lose health
+		if (y > gamePanel.screenHeight) { // Outside screen -> Player lose health
 			gamePanel.health -= 1;
 			if (gamePanel.health <= 0) {
 				gamePanel.gameState = gamePanel.finishState;
@@ -50,6 +50,6 @@ public class Enemy extends Entity { // REMIND: Create more Enemy instances/threa
 	public void resetPosition() {
 
 		y = -gamePanel.tileSize;
-		x = random.nextInt(gamePanel.screenWidth);
+		x = random.nextInt(gamePanel.screenWidth - gamePanel.tileSize);
 	}
 }
