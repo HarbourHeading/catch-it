@@ -27,12 +27,13 @@ Skip to the last step if you downloaded the jar file directly.
 
 ## To do
 
-- Create database for storing top scores.
-- Add logger, stderr piped to file.
-- Change game speed based on screen size.
-- Implement sorting algorithm for score file.
-- Fix player position not resetting on restart.
+- [ ] Create database for storing top scores.
+- [ ] Add logger, stderr piped to file.
+- [ ] Change game speed based on screen size.
+- [ ] Implement sorting algorithm for score file.
+- [ ] Fix player position not resetting on restart.
+
 ## Contributing
 
-The project is open-source and any and all contributions are welcome.<br>
+The project is open-source. Any and all contributions are welcome.<br>
 All feedback in respect to the project is just as appreciated!
