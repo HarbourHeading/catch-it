@@ -16,8 +16,8 @@ public class Player extends Entity {
 
 		this.gamePanel = gamePanel;
 		this.keyListen = keyListen;
-		
-		setDefaultValues();
+
+		this.setDefaultValues();
 	}
 
 	public void setDefaultValues() {
@@ -42,7 +42,7 @@ public class Player extends Entity {
 				x = gamePanel.screenWidth - gamePanel.tileSize;
 			}
 		}
-		
+
 		gamePanel.enemy.intersect = false;
 		gamePanel.collisionDetection.checkTile();
 	}
