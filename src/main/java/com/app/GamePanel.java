@@ -69,15 +69,15 @@ public class GamePanel extends JPanel implements Runnable {
 
 		while (gameThread != null) {
 
-			update();
-			repaint();
+			this.update();
+			this.repaint();
 
 			try {
 
 				double remainingTime = nextDrawTime - System.nanoTime();
 				remainingTime = remainingTime / 1000000;
 				nextDrawTime += drawInterval;
-				Thread.sleep((long) remainingTime);
+				Thread.sleep((long) Math.max(0, remainingTime)); // In case of exception where remainingTime < 0: take max where 0 is lowest
 
 			} catch (InterruptedException e) {
 				JOptionPane.showMessageDialog(this,
