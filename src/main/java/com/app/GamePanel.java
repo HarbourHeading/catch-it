@@ -51,9 +51,8 @@ public class GamePanel extends JPanel implements Runnable {
 		this.setDoubleBuffered(true);
 		this.addKeyListener(keyHandler);
 		this.setFocusable(true);
+		this.gameState = pauseState;
 	}
-
-	public void setupGame() { gameState = pauseState; }
 
 	public void startGameThread() {
 
@@ -85,7 +84,9 @@ public class GamePanel extends JPanel implements Runnable {
 						"InterruptedException", JOptionPane.ERROR_MESSAGE);
 				System.exit(1);
 			}
+
 		}
+
 	}
 
 	public void update() {
@@ -94,6 +95,7 @@ public class GamePanel extends JPanel implements Runnable {
 			player.update();
 			enemy.update();
 		}
+
 	}
 
 	public void paintComponent(Graphics g) {
@@ -107,4 +109,5 @@ public class GamePanel extends JPanel implements Runnable {
 
 		g2D.dispose();
 	}
+
 }
