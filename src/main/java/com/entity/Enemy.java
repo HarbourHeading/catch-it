@@ -14,14 +14,12 @@ public class Enemy extends Entity {
 	public Enemy(GamePanel gamePanel) {
 
 		this.gamePanel = gamePanel;
-
 		this.setDefaultValues();
 	}
 
 	public void setDefaultValues() {
 
-		x = random.nextInt(gamePanel.screenWidth);
-		y = -gamePanel.tileSize;
+		resetPosition();
 		velocity = 4;
 	}
 
@@ -33,10 +31,13 @@ public class Enemy extends Entity {
 		}
 
 		if (y > gamePanel.screenHeight) { // Outside screen -> Player lose health
+
 			gamePanel.health -= 1;
+
 			if (gamePanel.health <= 0) {
 				gamePanel.gameState = gamePanel.finishState;
 			}
+
 			this.resetPosition();
 		}
 
@@ -50,8 +51,9 @@ public class Enemy extends Entity {
 
 	public void resetPosition() {
 
+		x = random.nextInt(gamePanel.screenWidth - gamePanel.tileSize);  // If tileSize is not negated,
+																				// it can spawn outside the window
 		y = -gamePanel.tileSize;
-		x = random.nextInt(gamePanel.screenWidth - gamePanel.tileSize);
 	}
 
 }
