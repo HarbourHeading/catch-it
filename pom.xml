@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.harbourHeading</groupId>
-	<artifactId>catchGame</artifactId>
+	<artifactId>catch-it</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>CatchGame</name>
+	<name>catch-it</name>
 	<description>Catch eggs into a basket project.</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,6 +22,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>catch-it</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
