@@ -16,8 +16,8 @@ This project is meant to be a game of catch that utilizes state-of-the-art tools
 Skip to the last step if you downloaded the jar file directly from [releases](https://github.com/HarbourHeading/catch-it/releases/latest).
 
 ```
-1. git clone https://github.com/HarbourHeading/CatchGame.git
-2. cd CatchGame
+1. git clone https://github.com/HarbourHeading/catch-it.git
+2. cd catch-it
 3. mvn install
 4. cd target
 5. java -jar catch-it.jar
@@ -37,8 +37,8 @@ Skip to the last step if you downloaded the jar file directly from [releases](ht
 ### Clone the repo
 
 ```
-git clone https://github.com/HarbourHeading/CatchGame.git
-cd CatchGame
+git clone https://github.com/HarbourHeading/catch-it.git
+cd catch-it 
 ```
 
 ### Install the project
