@@ -23,7 +23,7 @@ public class Player extends Entity {
 	public void setDefaultValues() {
 
 		x = gamePanel.screenWidth / 2 - gamePanel.tileSize / 2; // Center screen
-		y = (int) (gamePanel.screenHeight * 0.8);
+		y = (int) (gamePanel.screenHeight * 0.80d);
 		velocity = 4;
 	}
 
@@ -34,6 +34,7 @@ public class Player extends Entity {
 			if (x < leftBorder) {
 				x = leftBorder;
 			}
+
 		}
 
 		if (keyListen.rightPressed) {
@@ -41,6 +42,7 @@ public class Player extends Entity {
 			if (x > gamePanel.screenWidth - gamePanel.tileSize) {
 				x = gamePanel.screenWidth - gamePanel.tileSize;
 			}
+
 		}
 
 		gamePanel.enemy.intersect = false;
@@ -52,4 +54,5 @@ public class Player extends Entity {
 		g2D.setColor(Color.white);
 		g2D.fillRect(x, y, gamePanel.tileSize, gamePanel.tileSize);
 	}
+
 }

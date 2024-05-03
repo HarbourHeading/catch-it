@@ -39,6 +39,7 @@ public class Enemy extends Entity {
 			}
 			this.resetPosition();
 		}
+
 	}
 
 	public void draw(Graphics2D g2D) {
@@ -52,4 +53,5 @@ public class Enemy extends Entity {
 		y = -gamePanel.tileSize;
 		x = random.nextInt(gamePanel.screenWidth - gamePanel.tileSize);
 	}
+
 }

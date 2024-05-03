@@ -17,8 +17,8 @@ public class KeyListen implements KeyListener {
 
         int keyPress = e.getKeyCode();
 
-        if (keyPress == KeyEvent.VK_LEFT || keyPress == KeyEvent.VK_A) { leftPressed = true; }
-        if (keyPress == KeyEvent.VK_RIGHT || keyPress == KeyEvent.VK_D) { rightPressed = true; }
+        if (keyPress == KeyEvent.VK_LEFT || keyPress == KeyEvent.VK_A) leftPressed = true;
+        if (keyPress == KeyEvent.VK_RIGHT || keyPress == KeyEvent.VK_D) rightPressed = true;
 
         if (keyPress == KeyEvent.VK_ESCAPE) {
             if (gamePanel.gameState == gamePanel.playState) {
@@ -28,6 +28,7 @@ public class KeyListen implements KeyListener {
             else if (gamePanel.gameState == gamePanel.pauseState) {
                 gamePanel.gameState = gamePanel.playState;
             }
+
         }
 
         if (keyPress == KeyEvent.VK_F) {
@@ -37,6 +38,7 @@ public class KeyListen implements KeyListener {
             gamePanel.gameState = gamePanel.pauseState;
             gamePanel.leaderboardCalculated = false;
         }
+
     }
 
     @Override
@@ -44,12 +46,13 @@ public class KeyListen implements KeyListener {
 
         int keyPress = e.getKeyCode();
 
-        if (keyPress == KeyEvent.VK_LEFT || keyPress == KeyEvent.VK_A) { leftPressed = false; }
-        if (keyPress == KeyEvent.VK_RIGHT || keyPress == KeyEvent.VK_D) { rightPressed = false; }
+        if (keyPress == KeyEvent.VK_LEFT || keyPress == KeyEvent.VK_A) leftPressed = false;
+        if (keyPress == KeyEvent.VK_RIGHT || keyPress == KeyEvent.VK_D) rightPressed = false;
     }
 
     // Unused method.
     @Override
     public void keyTyped(KeyEvent e) {
     }
+
 }
