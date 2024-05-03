@@ -26,18 +26,27 @@ public class Ui {
 
     public void healthDisplay(Graphics2D g2D) {
 
-        int x = (int) (gamePanel.screenWidth * 0.1d);
-        int y = (int) (gamePanel.screenHeight * 0.1d);
+        int x = (int) (gamePanel.screenWidth * 0.10d);
+        int y = (int) (gamePanel.screenHeight * 0.10d);
 
         g2D.drawString("Health: " + gamePanel.health, x, y);
     }
 
     public void scoreDisplay(Graphics2D g2D) {
 
-        int x = (int) (gamePanel.screenWidth * 0.1d);
+        int x = (int) (gamePanel.screenWidth * 0.10d);
         int y = (int) (gamePanel.screenHeight * 0.15d);
 
         g2D.drawString("Score: " + gamePanel.score, x, y);
+    }
+
+    private void showMessage(Graphics2D g2D, String message, double y) {
+
+        int messageLength = (int) g2D.getFontMetrics().getStringBounds(message, g2D).getWidth();
+        int xMessage = gamePanel.screenWidth / 2 - messageLength / 2;
+        int yMessage = (int) (gamePanel.screenHeight / 2 * y);
+
+        g2D.drawString(message, xMessage, yMessage);
     }
 
     public void draw(Graphics2D g2D) {
@@ -51,22 +60,12 @@ public class Ui {
         if (gamePanel.gameState == gamePanel.finishState) {
 
             String finishMessage = "You got " + gamePanel.score + " points!";
-
-            int finishMessageLength = (int) g2D.getFontMetrics().getStringBounds(finishMessage, g2D).getWidth();
-            int x = gamePanel.screenWidth / 2 - finishMessageLength / 2;
-            int y = (int) (gamePanel.screenHeight / 2 * 0.25d);
-
-            g2D.drawString(finishMessage, x, y);
+            showMessage(g2D, finishMessage, 0.25d);
 
             String resetMessage = "Press F to reset!";
+            showMessage(g2D, resetMessage, 0.35d);
 
-            int resetMessageLength = (int) g2D.getFontMetrics().getStringBounds(finishMessage, g2D).getWidth();
-            int xResetMessage = gamePanel.screenWidth / 2 - resetMessageLength / 2;
-            int yResetMessage = (int) (gamePanel.screenHeight / 2 * 0.35d);
-
-            g2D.drawString(resetMessage, xResetMessage, yResetMessage);
-
-            int xScoreDisplay = (int) (gamePanel.screenWidth * 0.1d);
+            int xScoreDisplay = (int) (gamePanel.screenWidth * 0.10d);
             int yScoreDisplay = (int) (gamePanel.screenHeight * 0.30d);
 
             if (!gamePanel.leaderboardCalculated) {
@@ -77,19 +76,20 @@ public class Ui {
             for (int i = 0; i < topScores.size(); i++) {
                 g2D.drawString("Top " + (i + 1) + ": " + topScores.get(i), xScoreDisplay, yScoreDisplay + (i * gamePanel.tileSize));
             }
+
         }
 
         if (gamePanel.gameState == gamePanel.pauseState) {
 
             g2D.setFont(arial_40_bold);
 
-            String pauseMessage = "Game is paused!";
+            String pauseMessage = "Game is paused";
+            showMessage(g2D, pauseMessage, 0.80d);
 
-            int messageLength = (int) g2D.getFontMetrics().getStringBounds(pauseMessage, g2D).getWidth();
-            int x = gamePanel.screenWidth / 2 - messageLength / 2;
-            int y = gamePanel.screenHeight / 2 + (gamePanel.tileSize * 2);
-
-            g2D.drawString(pauseMessage, x, y);
+            String unpauseMessage = "Press ESC to unpause";
+            showMessage(g2D, unpauseMessage, 0.95d);
         }
+
     }
+
 }
