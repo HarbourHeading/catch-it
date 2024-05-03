@@ -20,7 +20,7 @@ Skip to the last step if you downloaded the jar file directly from [releases](ht
 2. cd CatchGame
 3. mvn install
 4. cd target
-5. java -jar catchGame-0.0.1-SNAPSHOT.jar
+5. java -jar catch-it.jar
 ```
 
 ## To do
@@ -29,7 +29,7 @@ Skip to the last step if you downloaded the jar file directly from [releases](ht
 - [ ] Add logger, stderr piped to file.
 - [ ] Change game speed based on screen size.
 - [ ] Implement different sorting algorithm for score file.
-- [X] Add "Press ESC to unpause" display to pause screen.
+- [X] ~~Add "Press ESC to unpause" display to pause screen.~~
 - [ ] Fix player position not resetting on restart.
 
 ## Contributing
@@ -48,4 +48,5 @@ mvn install
 ```
 
 ### Submit a pull request
+
 If you want to contribute, please fork the repository and open a pull request.
