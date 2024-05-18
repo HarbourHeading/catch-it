@@ -4,7 +4,7 @@ Catch is a game where you catch falling objects. Each caught object gives the pl
 and each missed object makes the player lose health. The game is written in java and
 built with maven.
 
-# Motivation
+## Motivation
 
 The catch game has been reproduced many times before - often as a beginner project - but none of them try to modernize it.
 This project is meant to be a game of catch that utilizes state-of-the-art tools and ideas while keeping the gameplay largely the same.
@@ -30,7 +30,7 @@ Skip to the last step if you downloaded the jar file directly from [releases](ht
 - [ ] Change game speed based on screen size.
 - [ ] Implement different sorting algorithm for score file.
 - [X] ~~Add "Press ESC to unpause" display to pause screen.~~
-- [ ] Fix player position not resetting on restart.
+- [X] ~~Fix player position not resetting on restart.~~
 
 ## Contributing
 
