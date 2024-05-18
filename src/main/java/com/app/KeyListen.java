@@ -1,5 +1,6 @@
 package com.app;
 
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -31,7 +32,7 @@ public class KeyListen implements KeyListener {
 
         }
 
-        if (keyPress == KeyEvent.VK_F) {
+        if (keyPress == KeyEvent.VK_F && gamePanel.gameState == gamePanel.finishState) {
             gamePanel.health = 5;
             gamePanel.score = 0;
 
@@ -52,7 +53,6 @@ public class KeyListen implements KeyListener {
 
     // Unused method.
     @Override
-    public void keyTyped(KeyEvent e) {
-    }
+    public void keyTyped(KeyEvent e) {}
 
 }

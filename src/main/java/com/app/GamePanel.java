@@ -24,7 +24,6 @@ public class GamePanel extends JPanel implements Runnable {
 	final int maxScreenRow = 12;
 	public final int screenWidth = tileSize * maxScreenCol;
 	public final int screenHeight = tileSize * maxScreenRow;
-	public final Enemy enemy = new Enemy(this);
 
 	Thread gameThread;
 	public final CollisionDetection collisionDetection = new CollisionDetection(this);
@@ -32,6 +31,7 @@ public class GamePanel extends JPanel implements Runnable {
 	final KeyListen keyHandler = new KeyListen(this);
 	public final Player player = new Player(this, keyHandler);
 	final Ui ui = new Ui(this);
+	public final Enemy enemy = new Enemy(this);
 
 	// Game States
 	public int gameState;
@@ -94,6 +94,10 @@ public class GamePanel extends JPanel implements Runnable {
 		if (gameState == playState) {
 			player.update();
 			enemy.update();
+		}
+
+		else if (gameState == finishState) {
+			player.x = this.screenWidth / 2 - this.tileSize / 2;
 		}
 
 	}
