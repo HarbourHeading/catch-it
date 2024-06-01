@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.harbourHeading</groupId>
 	<artifactId>catch-it</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 	<name>catch-it</name>
 	<description>Catch eggs into a basket project.</description>
