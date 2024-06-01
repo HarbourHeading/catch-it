@@ -2,35 +2,42 @@ package com.entity;
 
 import com.app.GamePanel;
 
+import javax.swing.ImageIcon;
 import java.awt.Graphics2D;
-import java.awt.Color;
+import java.util.Objects;
 import java.util.Random;
+
 
 public class Enemy extends Entity {
 
 	final GamePanel gamePanel;
 	private final Random random = new Random();
+	private final ImageIcon enemySprite;
 
 	public Enemy(GamePanel gamePanel) {
 
 		this.gamePanel = gamePanel;
+		enemySprite = new ImageIcon(Objects.requireNonNull(getClass().getResource("/enemy.png")));
+
+
 		this.setDefaultValues();
 	}
 
 	public void setDefaultValues() {
 
-		resetPosition();
+		this.resetPosition();
 		velocity = 4;
 	}
 
 	public void update() {
+
 		y += velocity;
 
 		if (intersect) {
 			this.resetPosition();
 		}
 
-		if (y > gamePanel.screenHeight) { // Outside screen -> Player lose health
+		else if (y > gamePanel.screenHeight) {  // Outside screen -> Player lose health
 
 			gamePanel.health -= 1;
 
@@ -45,8 +52,7 @@ public class Enemy extends Entity {
 
 	public void draw(Graphics2D g2D) {
 
-		g2D.setColor(Color.red);
-		g2D.fillRect(x, y, gamePanel.tileSize, gamePanel.tileSize);
+		g2D.drawImage(enemySprite.getImage(), x, y, gamePanel.tileSize, gamePanel.tileSize, gamePanel);
 	}
 
 	public void resetPosition() {
