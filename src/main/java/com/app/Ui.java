@@ -3,7 +3,6 @@ package com.app;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Color;
-
 import java.util.List;
 
 public class Ui {
@@ -52,12 +51,23 @@ public class Ui {
     public void draw(Graphics2D g2D) {
 
         g2D.setFont(arial_20);
-        g2D.setColor(Color.WHITE);
+        g2D.setColor(Color.white);
 
         healthDisplay(g2D);
         scoreDisplay(g2D);
 
-        if (gamePanel.gameState == gamePanel.finishState) {
+        if (gamePanel.gameState == gamePanel.pauseState) {
+
+            g2D.setFont(arial_40_bold);
+
+            String pauseMessage = "Game is paused";
+            showMessage(g2D, pauseMessage, 0.80d);
+
+            String unpauseMessage = "Press ESC to unpause";
+            showMessage(g2D, unpauseMessage, 0.95d);
+        }
+
+        else if (gamePanel.gameState == gamePanel.finishState) {
 
             String finishMessage = "You got " + gamePanel.score + " points!";
             showMessage(g2D, finishMessage, 0.25d);
@@ -77,17 +87,6 @@ public class Ui {
                 g2D.drawString("Top " + (i + 1) + ": " + topScores.get(i), xScoreDisplay, yScoreDisplay + (i * gamePanel.tileSize));
             }
 
-        }
-
-        if (gamePanel.gameState == gamePanel.pauseState) {
-
-            g2D.setFont(arial_40_bold);
-
-            String pauseMessage = "Game is paused";
-            showMessage(g2D, pauseMessage, 0.80d);
-
-            String unpauseMessage = "Press ESC to unpause";
-            showMessage(g2D, unpauseMessage, 0.95d);
         }
 
     }
