@@ -6,7 +6,7 @@ built with maven.
 
 ## Motivation
 
-The catch game has been reproduced many times before - often as a beginner project - but none of them try to modernize it.
+The catch game has been reproduced hundreds of times before, but very few try to modernize it.
 This project is meant to be a game of catch that utilizes state-of-the-art tools and ideas while keeping the gameplay largely the same.
 
 ![game](https://github.com/HarbourHeading/CatchGame/assets/69332989/3f50022d-11c5-4898-8cd2-0c74659820f8)
