@@ -1,6 +1,8 @@
 package com.app;
 
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.util.Objects;
+
 
 /*
  * Catch is a game where you catch falling objects. Each caught object gives the player a point
@@ -16,13 +18,19 @@ import javax.swing.JFrame;
  * @since 1.0
  */
 
+
+
 public class Main {
+
+	private static final ImageIcon favicon = new ImageIcon(Objects.requireNonNull(Main.class.getResource("/enemy.png")));
+
 	public static void main(String[] args) {
 
 		JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(false);
 		window.setTitle("Catch it");
+		window.setIconImage(favicon.getImage());
 
 		GamePanel gamePanel = new GamePanel();
 		window.add(gamePanel);
