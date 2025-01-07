@@ -4,7 +4,7 @@ Catch is a game where you catch falling objects. Each caught object gives the pl
 and each missed object makes the player lose health. The game is written in java and
 built with maven.
 
-Archive: Project has been archived since June 5th 2024, but was unarchived for a sort while on January 7th 2024 for a one-time update.
+Archive: Project has been archived since June 5th 2024, but was unarchived for a sort while on January 7th 2025 for a one-time update.
 
 ## Motivation
 
